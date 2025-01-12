@@ -23,17 +23,17 @@ select k.tytul, count (z.idzamowienia) as liczba_zamowien from ksiazki k join za
 -- 7. Znajdź najczęściej zamawianą książkę. 
 select k.tytul, count(z.idzamowienia) as liczba_zamowien from ksiazki k join zamowienia z on k.idksiazki = z.idksiazki group by k.tytul order by liczba_zamowien desc;
 -- 8. Pokaż klienta z największą liczbą zamówień. 
-select c.imie< c.nazwisko, count(z.idzamowienia) as liczba_zamowien from klienci c join zamowienia z on c.idklienta = z.idklienta group by c.imie, c.nazwisko order by liczba_zamowien desc limit 1;
+select c.imie < c.nazwisko, count(z.idzamowienia) as liczba_zamowien from klienci c join zamowienia z on c.idklienta = z.idklienta group by c.imie, c.nazwisko order by liczba_zamowien desc limit 1;
 -- 9. Pokaż wszystkie zamówienia posortowane według daty.
 
 -- 10. Pokaż klientów, którzy nie zamówili żadnej książki po 2020 roku.
 
--- 1. Wybierz książki, które zostały zamówione dokładnie raz.
+-- 11. Wybierz książki, które zostały zamówione dokładnie raz.
 
--- 2. Pokaż klientów, którzy zamówili książki w marcu.
+-- 12. Pokaż klientów, którzy zamówili książki w marcu.
 
--- 3. Pokaż książki zamówione przez klientów z Warszawy.
+-- 13. Pokaż książki zamówione przez klientów z Warszawy.
 
--- 4. Pokaż liczbę zamówień dla każdej książki.
+-- 14. Pokaż liczbę zamówień dla każdej książki.
 
--- 5. Pokaż klientów i sumę wartości ich zamówień.
+-- 15. Pokaż klientów i sumę wartości ich zamówień.
