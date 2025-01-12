@@ -37,3 +37,4 @@ select klienci.imie, klienci.nazwisko from klienci join zamowienia on klienci.id
 -- 14. Pokaż liczbę zamówień dla każdej książki.
 
 -- 15. Pokaż klientów i sumę wartości ich zamówień.
+--
