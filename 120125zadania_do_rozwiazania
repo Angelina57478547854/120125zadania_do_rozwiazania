@@ -1,0 +1,38 @@
+select k.tytul, z.status from ksiazki k join zamowienia z on k.idksiazki = z.idksiazki;
+
+select klienci.imie, klienci.nazwisko, zamowienia.data from klienci join zamowienia on klienci.idklienta = zamowienia.idklienta;
+
+select zamowienia.idzamowienia, ksiazki.tytul from ksiazki join zamowienia on ksiazki.idksiazki = zamowienia.idksiazki where ksiazki.idksiazki is null;
+ 
+select ksiazki.tytul, klienci.imie, klienci.nazwisko, zamowienia.data from ksiazki join zamowienia on ksiazki.idksiazki=zamowienie.idksiazki join klienci on klienci.idklienta=zamowienie.idklienta;
+ 
+select klienci.imie, klienci.nazwisko, count(zamowienie.idzamowienia) as liczba from klienci join zamowienia on klienci.idklienta=zamowienie.idklienta group by imie,nazwisko; 
+ 
+-- 1. Wyświetl tytuły książek, które były zamawiane więcej niż jeden raz. 
+select ksiazki.tytul, zamowienia.idzamowienia from ksiazki join zamowienia on ksiazki.idksiazki=zamowienia.idksiazki where zamowienia.idzamowienia <1;
+-- 2. Wyświetl wszystkich klientów, którzy nie dokonali żadnych zamówień. 
+select ksiazki.tytul, zamowienia.idzamowienia from ksiazki join zamowienia on ksiazki.idksiazki=zamowienia.idksiazki where zamowienia.idzamowienia = 0;
+-- 3. Pokaż klientów, którzy zamówili książki o cenie powyżej 50 zł.  
+select c.imie, c.nazwisko from klienci c join zamowienia z on z.idksiazki = k.idksiazki where k.cena > 50;
+-- 4. Wyświetl książki i liczbę zamówień, posortowane malejąco.
+select k.tytul, count (z.idzamowienia) as liczba_zamowien from ksiazki k join zamowienia z on k.idksiazki = z.idksiazki group by k.tytul having count(z.idzamowienia)>1;
+-- 5. Pokaż książki zamówione przez więcej niż jednego klienta.
+select k.tytul,
+-- 6. Pokaż klientów, którzy zamówili książki droższe niż 100 zł.
+
+-- 7. Znajdź najczęściej zamawianą książkę. 
+select k.tytul, count(z.idzamowienia) as liczba_zamowien from ksiazki k join zamowienia z on k.idksiazki = z.idksiazki group by k.tytul order by liczba_zamowien desc;
+-- 8. Pokaż klienta z największą liczbą zamówień. 
+
+-- 9. Pokaż wszystkie zamówienia posortowane według daty.
+-- 10. Pokaż klientów, którzy nie zamówili żadnej książki po 2020 roku.
+
+-- 1. Wybierz książki, które zostały zamówione dokładnie raz.
+
+-- 2. Pokaż klientów, którzy zamówili książki w marcu.
+
+-- 3. Pokaż książki zamówione przez klientów z Warszawy.
+
+-- 4. Pokaż liczbę zamówień dla każdej książki.
+
+-- 5. Pokaż klientów i sumę wartości ich zamówień.
